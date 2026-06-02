@@ -42,25 +42,50 @@
             text-align: center;
             color: white;
         }
-        .hero h1 {
-            font-size: 52px;
-            margin: 0;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 22px;
-            margin-top: 15px;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 32px;
-            background: #1a73e8;
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 18px;
-        }
+       /* HERO WITH CINEMATIC OVERLAY */
+.hero {
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.75), 
+            rgba(0, 0, 0, 0.35)
+        ),
+        url('motorcycle.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* cinematic parallax effect */
+    padding: 160px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 56px;
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero p {
+    font-size: 24px;
+    margin-top: 18px;
+    opacity: 0.95;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 36px;
+    background: #1a73e8;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
 
         /* SECTIONS */
         .section {
