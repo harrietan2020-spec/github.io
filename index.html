@@ -6,243 +6,396 @@
     <title>Highlights Trading and Services</title>
 
     <style>
+        :root {
+            --primary: #0b5cab;
+            --primary-dark: #08427a;
+            --accent: #f4b000;
+            --bg: #f4f6f9;
+            --text: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #f2f4f7;
-            color: #333;
-            <!-- PRODUCT STORE SECTION -->
-<div class="section" id="store">
-    <h2>Products for Sale</h2>
+            background: var(--bg);
+            color: var(--text);
+        }
 
-    <div class="services">
-
-        <!-- PRODUCT 1 -->
-        <div class="service-card">
-            <img src="product1.jpg" style="width:100%; border-radius:8px;">
-            <h3>Wireless Earbuds</h3>
-            <p>High‑quality sound, noise reduction, long battery life.</p>
-            <p><strong>$29.99</strong></p>
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOURPAYPALEMAIL&item_name=Wireless+Earbuds&amount=29.99&currency_code=USD" 
-               class="btn" style="font-size:16px;">Buy Now</a>
-        </div>
-
-        <!-- PRODUCT 2 -->
-        <div class="service-card">
-            <img src="product2.jpg" style="width:100%; border-radius:8px;">
-            <h3>LED Desk Lamp</h3>
-            <p>Adjustable brightness, USB powered, perfect for home or office.</p>
-            <p><strong>$19.99</strong></p>
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOURPAYPALEMAIL&item_name=LED+Desk+Lamp&amount=19.99&currency_code=USD" 
-               class="btn" style="font-size:16px;">Buy Now</a>
-        </div>
-
-        <!-- PRODUCT 3 -->
-        <div class="service-card">
-            <img src="product3.jpg" style="width:100%; border-radius:8px;">
-            <h3>Portable Mini Fan</h3>
-            <p>Rechargeable, quiet, and perfect for travel or outdoor use.</p>
-            <p><strong>$14.99</strong></p>
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOURPAYPALEMAIL&item_name=Portable+Mini+Fan&amount=14.99&currency_code=USD" 
-               class="btn" style="font-size:16px;">Buy Now</a>
-        </div>
-
-        <!-- SERVICE PRODUCT COMBO -->
-        <div class="service-card">
-            <img src="service1.jpg" style="width:100%; border-radius:8px;">
-            <h3>Home Tech Setup Service</h3>
-            <p>We install and configure your devices: cameras, WiFi, smart home, etc.</p>
-            <p><strong>$49.99</strong></p>
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOURPAYPALEMAIL&item_name=Home+Tech+Setup&amount=49.99&currency_code=USD" 
-               class="btn" style="font-size:16px;">Book Now</a>
-        </div>
-
-    </div>
-</div>
-
+        /* TOP BAR */
+        .top-bar {
+            background: var(--primary-dark);
+            color: #fff;
+            font-size: 13px;
+            padding: 6px 18px;
+            text-align: right;
         }
 
         /* NAVBAR */
         nav {
             background: #ffffff;
-            padding: 15px 30px;
+            padding: 14px 28px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 10;
         }
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
         nav a {
             text-decoration: none;
-            color: #1a73e8;
-            font-weight: 600;
+            color: #444;
+            font-weight: 500;
             margin-left: 20px;
+            font-size: 15px;
+        }
+        nav a:hover {
+            color: var(--primary);
         }
 
-        /* HERO WITH CINEMATIC OVERLAY */
+        /* HERO */
         .hero {
             background:
                 linear-gradient(
-                    rgba(0, 0, 0, 0.75),
+                    rgba(0, 0, 0, 0.65),
                     rgba(0, 0, 0, 0.35)
                 ),
                 url('motorcycle.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            padding: 160px 20px;
-            text-align: center;
-            color: white;
+            padding: 120px 20px;
+            color: #fff;
         }
-        .hero h1 {
-            font-size: 56px;
-            margin: 0;
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1 1 320px;
+        }
+        .hero-text h1 {
+            font-size: 40px;
+            margin: 0 0 10px;
             font-weight: 800;
-            letter-spacing: 1px;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.6);
         }
-        .hero p {
-            font-size: 24px;
-            margin-top: 18px;
-            opacity: 0.95;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+        .hero-text p {
+            font-size: 18px;
+            margin: 0 0 20px;
+            max-width: 520px;
         }
-        .btn {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 14px 36px;
-            background: #1a73e8;
-            color: white;
-            border-radius: 6px;
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+            padding: 10px 22px;
+            border-radius: 4px;
             text-decoration: none;
-            font-size: 20px;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            font-size: 15px;
+        }
+        .btn-outline {
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 9px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
         }
 
-        /* SECTIONS */
+        /* GENERIC SECTION */
         .section {
             max-width: 1100px;
-            margin: 50px auto;
-            background: white;
-            padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 40px auto;
+            background: #fff;
+            padding: 32px 32px 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
         }
-        h2 {
-            color: #1a73e8;
+        .section h2 {
             margin-top: 0;
-            font-size: 32px;
+            color: var(--primary);
+            font-size: 26px;
         }
 
-        /* SERVICES GRID */
-        .services {
+        /* ABOUT LAYOUT */
+        .about-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        .about-text {
+            flex: 1 1 320px;
+        }
+        .about-side {
+            flex: 0 0 260px;
+            background: #f7f9fc;
+            border-radius: 8px;
+            padding: 18px;
+            font-size: 14px;
+        }
+        .about-side h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: var(--primary-dark);
+        }
+
+        /* TWO-COLUMN INFO */
+        .two-col {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            gap: 24px;
+            margin-top: 18px;
         }
-        .service-card {
-            background: #f8f9fb;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #e1e4e8;
-            transition: 0.2s;
+        .info-card {
+            background: #f7f9fc;
+            border-radius: 8px;
+            padding: 18px 20px;
+            font-size: 14px;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        .info-card h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: var(--primary-dark);
         }
 
-        /* CONTACT BOX */
+        /* PRODUCTS & SERVICES GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+            margin-top: 18px;
+        }
+        .card {
+            background: #f7f9fc;
+            border-radius: 8px;
+            padding: 18px 20px 22px;
+            border: 1px solid #e1e4ea;
+            font-size: 14px;
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: var(--primary-dark);
+        }
+        .price {
+            font-weight: 700;
+            margin: 8px 0;
+        }
+        .card .btn-primary {
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+
+        /* CONTACT */
+        .contact-row {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+            gap: 24px;
+            margin-top: 18px;
+        }
         .contact-box {
-            background: #e8f0fe;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 20px;
+            background: #f7f9fc;
+            border-radius: 8px;
+            padding: 18px 20px;
+            font-size: 14px;
+        }
+        .contact-box h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: var(--primary-dark);
         }
 
         /* FOOTER */
         footer {
             text-align: center;
-            padding: 30px;
-            background: #222;
-            color: white;
-            margin-top: 60px;
+            padding: 20px;
+            background: #111;
+            color: #ccc;
+            font-size: 13px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding: 80px 16px;
+            }
+            .section {
+                margin: 24px 12px;
+                padding: 22px 18px 28px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <div class="top-bar">
+        Email: yourname@example.com &nbsp;|&nbsp; Lakewood, CA
+    </div>
+
     <nav>
-        <div style="font-size: 22px; font-weight: 700; color:#1a73e8;">Highlights Trading and Services</div>
+        <div class="logo-text">Highlights Trading and Services</div>
         <div>
             <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="#mission">Mission & Vision</a>
+            <a href="#products">Products & Services</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <!-- HERO -->
-    <div class="hero">
-        <h1>Highlights Trading and Services</h1>
-        <p>Your trusted partner for service, quality, and reliability</p>
-        <a class="btn" href="#services">Explore Services</a>
-    </div>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1>Reliable Trading & Service Solutions</h1>
+                <p>
+                    Highlights Trading and Services provides practical, dependable products and support
+                    for homes and businesses—focused on value, quality, and trust.
+                </p>
+                <div class="hero-cta">
+                    <a href="#products" class="btn-primary">View Products & Services</a>
+                    <a href="#about" class="btn-outline">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ABOUT -->
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>
-            Highlights Trading and Services provides high‑quality operational and technical support with a commitment to 
-            reliability, accuracy, and customer satisfaction. With extensive experience in warehouse management, 
-            inventory control, and technical systems such as CCTV, Access Control, and Fire Alarm, we bring 
-            professionalism and efficiency to every project.
-        </p>
-    </div>
-
-    <!-- SERVICES -->
-    <div class="section" id="services">
-        <h2>Our Services</h2>
-
-        <div class="services">
-            <div class="service-card">
-                <h3>Warehouse & Inventory</h3>
-                <p>Operational excellence, accuracy, and organization for all warehouse environments.</p>
+    <section class="section" id="about">
+        <h2>About Highlights Trading and Services</h2>
+        <div class="about-layout">
+            <div class="about-text">
+                <p>
+                    Highlights Trading and Services is built on years of hands‑on experience in operations,
+                    warehouse management, and technical systems support. We focus on delivering practical
+                    solutions—whether through physical products or service engagements—that help customers
+                    work smarter, safer, and more efficiently.
+                </p>
+                <p>
+                    From general merchandise to technical support services, our goal is simple:
+                    provide honest value, clear communication, and reliable follow‑through on every
+                    commitment we make.
+                </p>
             </div>
+            <aside class="about-side">
+                <h3>Why Customers Choose Us</h3>
+                <ul>
+                    <li>Operational discipline and attention to detail</li>
+                    <li>Experience in warehouse and inventory environments</li>
+                    <li>Technical familiarity with security and low‑voltage systems</li>
+                    <li>Customer‑focused mindset and service attitude</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
 
-            <div class="service-card">
-                <h3>Technical Systems</h3>
-                <p>CCTV, Access Control, Fire Alarm, Security Systems, and more.</p>
+    <!-- MISSION & VISION -->
+    <section class="section" id="mission">
+        <h2>Mission & Vision</h2>
+        <div class="two-col">
+            <div class="info-card">
+                <h3>Our Mission</h3>
+                <p>
+                    To provide accessible, reliable products and services that support everyday needs—
+                    from home essentials to technical support—while maintaining integrity, transparency,
+                    and respect in every interaction.
+                </p>
             </div>
-
-            <div class="service-card">
-                <h3>Customer Service</h3>
-                <p>Professional communication and support to enhance business operations.</p>
-            </div>
-
-            <div class="service-card">
-                <h3>Business Support</h3>
-                <p>General services to help your business run smoothly and efficiently.</p>
+            <div class="info-card">
+                <h3>Our Vision</h3>
+                <p>
+                    To be a trusted local partner known for consistency, responsiveness, and practical
+                    solutions that genuinely help customers and businesses operate better.
+                </p>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- PRODUCTS & SERVICES -->
+    <section class="section" id="products">
+        <h2>Products & Services</h2>
+        <p>
+            We offer a combination of general merchandise and service‑based solutions. Below are sample
+            items you can customize as your catalog grows.
+        </p>
+
+        <div class="grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="card">
+                <h3>Wireless Earbuds</h3>
+                <p>Compact, comfortable, and ideal for daily use at work or on the go.</p>
+                <p class="price">$29.99</p>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOURPAYPALEMAIL&item_name=Wireless+Earbuds&amount=29.99&currency_code=USD"
+                   class="btn-primary">Buy Now</a>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="card">
+                <h3>LED Desk Lamp</h3>
+                <p>Energy‑efficient lighting with adjustable brightness for home or office.</p>
+                <p class="price">$19.99</p>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOURPAYPALEMAIL&item_name=LED+Desk+Lamp&amount=19.99&currency_code=USD"
+                   class="btn-primary">Buy Now</a>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="card">
+                <h3>Portable Mini Fan</h3>
+                <p>Rechargeable and quiet—perfect for travel, outdoor work, or warm days.</p>
+                <p class="price">$14.99</p>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOURPAYPALEMAIL&item_name=Portable+Mini+Fan&amount=14.99&currency_code=USD"
+                   class="btn-primary">Buy Now</a>
+            </div>
+
+            <!-- SERVICE 1 -->
+            <div class="card">
+                <h3>Home Tech Setup Service</h3>
+                <p>Assistance with basic device setup: Wi‑Fi, cameras, small electronics, and more.</p>
+                <p class="price">$49.99</p>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOURPAYPALEMAIL&item_name=Home+Tech+Setup&amount=49.99&currency_code=USD"
+                   class="btn-primary">Book Service</a>
+            </div>
+
+        </div>
+    </section>
 
     <!-- CONTACT -->
-    <div class="section" id="contact">
+    <section class="section" id="contact">
         <h2>Contact</h2>
-
-        <div class="contact-box">
-            <p><strong>Email:</strong> yourname@example.com</p>
-            <p><strong>Location:</strong> Lakewood, CA</p>
+        <div class="contact-row">
+            <div>
+                <p>
+                    For product inquiries, service requests, or partnership opportunities, feel free to reach out.
+                    We aim to respond within one business day.
+                </p>
+            </div>
+            <div class="contact-box">
+                <h3>Get in Touch</h3>
+                <p><strong>Email:</strong> yourname@example.com</p>
+                <p><strong>Location:</strong> Lakewood, CA</p>
+            </div>
         </div>
-    </div>
-</div> <!-- end of SERVICES section -->
+    </section>
 
     <footer>
         © 2026 Highlights Trading and Services — All Rights Reserved
