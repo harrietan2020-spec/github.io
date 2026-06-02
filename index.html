@@ -13,29 +13,48 @@
             color: #333;
         }
 
-        /* HERO SECTION */
+        /* NAVBAR */
+        nav {
+            background: #ffffff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            text-decoration: none;
+            color: #1a73e8;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+
+        /* HERO */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
                         url('https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
-            padding: 120px 20px;
+            padding: 150px 20px;
             text-align: center;
             color: white;
         }
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin: 0;
             font-weight: 700;
         }
         .hero p {
-            font-size: 20px;
+            font-size: 22px;
             margin-top: 15px;
         }
         .btn {
             display: inline-block;
-            margin-top: 25px;
-            padding: 12px 28px;
+            margin-top: 30px;
+            padding: 14px 32px;
             background: #1a73e8;
             color: white;
             border-radius: 6px;
@@ -45,64 +64,90 @@
 
         /* SECTIONS */
         .section {
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 50px auto;
             background: white;
-            padding: 40px;
-            border-radius: 10px;
+            padding: 50px;
+            border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         h2 {
             color: #1a73e8;
             margin-top: 0;
+            font-size: 32px;
         }
 
         /* SERVICES GRID */
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
         .service-card {
             background: #f8f9fb;
-            padding: 25px;
-            border-radius: 8px;
+            padding: 30px;
+            border-radius: 10px;
             text-align: center;
             border: 1px solid #e1e4e8;
+            transition: 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
         }
         .service-card h3 {
             margin-top: 0;
             color: #333;
+            font-size: 22px;
+        }
+
+        /* CONTACT BOX */
+        .contact-box {
+            background: #e8f0fe;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
         }
 
         /* FOOTER */
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             background: #222;
             color: white;
-            margin-top: 50px;
+            margin-top: 60px;
         }
     </style>
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
+    <nav>
+        <div style="font-size: 22px; font-weight: 700; color:#1a73e8;">Harrietan Services</div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
     <!-- HERO -->
     <div class="hero">
-        <h1>Harrietan Services</h1>
-        <p>Professional. Reliable. Customer‑Focused.</p>
-        <a class="btn" href="#services">View Services</a>
+        <h1>Professional. Reliable. Customer‑Focused.</h1>
+        <p>Delivering excellence in warehouse operations, technical systems, and business support.</p>
+        <a class="btn" href="#services">Explore Services</a>
     </div>
 
     <!-- ABOUT -->
-    <div class="section">
+    <div class="section" id="about">
         <h2>About Us</h2>
         <p>
-            We deliver high‑quality services with a focus on reliability, efficiency, and customer satisfaction.
-            With years of experience in warehouse operations, technical systems, and business support,
-            Harrietan Services is committed to excellence in every project.
+            Harrietan Services provides high‑quality operational and technical support with a commitment to 
+            reliability, accuracy, and customer satisfaction. With extensive experience in warehouse management, 
+            inventory control, and technical systems such as CCTV, Access Control, and Fire Alarm, we bring 
+            professionalism and efficiency to every project.
         </p>
     </div>
 
@@ -113,31 +158,34 @@
         <div class="services">
             <div class="service-card">
                 <h3>Warehouse & Inventory</h3>
-                <p>Accuracy, organization, and operational excellence for all warehouse needs.</p>
+                <p>Operational excellence, accuracy, and organization for all warehouse environments.</p>
             </div>
 
             <div class="service-card">
                 <h3>Technical Systems</h3>
-                <p>CCTV, Access Control, Fire Alarm, Security Systems, and more.</p>
+                <p>Support for CCTV, Access Control, Fire Alarm, Security Systems, and more.</p>
             </div>
 
             <div class="service-card">
                 <h3>Customer Service</h3>
-                <p>Professional communication and support for smooth business operations.</p>
+                <p>Professional communication and support to enhance business operations.</p>
             </div>
 
             <div class="service-card">
                 <h3>Business Support</h3>
-                <p>General services to help your business run efficiently and effectively.</p>
+                <p>General services to help your business run smoothly and efficiently.</p>
             </div>
         </div>
     </div>
 
     <!-- CONTACT -->
-    <div class="section">
+    <div class="section" id="contact">
         <h2>Contact</h2>
-        <p>Email: yourname@example.com</p>
-        <p>Location: Lakewood, CA</p>
+
+        <div class="contact-box">
+            <p><strong>Email:</strong> yourname@example.com</p>
+            <p><strong>Location:</strong> Lakewood, CA</p>
+        </div>
     </div>
 
     <footer>
